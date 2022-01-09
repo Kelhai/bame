@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -143,6 +143,8 @@
     <Library Include="glfw\lib\glfw3dll.lib" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
     <None Include="glfw\lib\glfw3.dll" />
     <None Include="glm\detail\func_common.inl" />
     <None Include="glm\detail\func_common_simd.inl" />
@@ -603,6 +605,7 @@
   <ItemGroup>
     <Image Include="awesomeface.png" />
     <Image Include="background.png" />
+    <Image Include="nixon.png" />
     <Image Include="pizza.png" />
     <Image Include="rob.png" />
     <Image Include="sigma.png" />

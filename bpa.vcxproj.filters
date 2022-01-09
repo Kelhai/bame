@@ -440,6 +440,8 @@
     <None Include="src\vertex.vs" />
     <None Include="src\fragment.fs" />
     <None Include="src\one.lvl" />
+    <None Include=".gitignore" />
+    <None Include=".gitattributes" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glfw\include\GLFW\glfw3native.h">
@@ -1386,6 +1388,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="sigma.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="nixon.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
