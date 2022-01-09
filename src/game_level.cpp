@@ -4,7 +4,8 @@
 #include <sstream>
 #include <iostream>
 
-void GameLevel::load(const char* file, unsigned int levelWidth, unsigned int levelHeight) {
+void GameLevel::load(const char* file, unsigned int levelWidth, unsigned int levelHeight, int number) {
+	this->number = number;
 	this->bricks.clear();
 	unsigned int tileCode;
 	GameLevel level;
@@ -50,28 +51,43 @@ void GameLevel::init(std::vector<std::vector<unsigned int>> tileData, unsigned i
 	unitWidth = levelWidth / static_cast<float>(width);
 	unitHeight = levelHeight / height;
 	
-	for (unsigned int y = 0; y < height; y++) {
-		for (unsigned int x = 0; x < width; x++) {
-			if (tileData[y][x] == 1) { // solid
-				glm::vec2 pos(unitWidth * x, unitHeight * y);
-				glm::vec2 size(unitWidth, unitHeight);
-				GameObject obj(pos, size, ResourceManager::getTexture("pizza"));
-				obj.isSolid = true;
-				this->bricks.push_back(obj);
-			} else if (tileData[y][x] > 1) {
-				glm::vec3 color = glm::vec3(1.0f);
-				if (tileData[y][x] == 2)
-					color = glm::vec3(0.2f, 0.6f, 1.0f);
-				else if (tileData[y][x] == 3)
-					color = glm::vec3(0.0f, 0.7f, 0.0f);
-				else if (tileData[y][x] == 4)
-					color = glm::vec3(0.8f, 0.8f, 0.4f);
-				else if (tileData[y][x] == 5)
-					color = glm::vec3(1.0f, 0.5f, 0.0f);
-			
-				glm::vec2 pos(unitWidth * x, unitHeight * y);
-				glm::vec2 size(unitWidth, unitHeight);
-				this->bricks.push_back(GameObject(pos, size, ResourceManager::getTexture("rob"), color));
+	for (unsigned int x = 0; x < height; x++) {
+		for (unsigned int y = 0; y < width; y++) {
+			//if (tileData[x][y] == 1) { // solid
+			//	glm::vec2 pos(unitWidth * y, unitHeight * x);
+			//	glm::vec2 size(unitWidth, unitHeight);
+			//	GameObject obj(pos, size, ResourceManager::getTexture("pizza"));
+			//	obj.isSolid = true;
+			//	this->bricks.push_back(obj);
+			//} else if (tileData[x][y] > 1) {
+			//	glm::vec3 color = glm::vec3(1.0f);
+			//	if (tileData[x][y] == 2)
+			//		color = glm::vec3(0.2f, 0.6f, 1.0f);
+			//	else if (tileData[x][y] == 3)
+			//		color = glm::vec3(0.0f, 0.7f, 0.0f);
+			//	else if (tileData[x][y] == 4)
+			//		color = glm::vec3(0.8f, 0.8f, 0.4f);
+			//	else if (tileData[x][y] == 5)
+			//		color = glm::vec3(1.0f, 0.5f, 0.0f);
+			//
+			//	glm::vec2 pos(unitWidth * y, unitHeight * x);
+			//	glm::vec2 size(unitWidth, unitHeight);
+			//	this->bricks.push_back(GameObject(pos, size, ResourceManager::getTexture("rob"), color));
+			//}
+			// if tile exists
+			if (tileData[x][y] > 0) {
+				// if level is one
+				if (this->number == 1) {
+					glm::vec2 pos(unitWidth * y, unitHeight * x);
+					glm::vec2 size(unitWidth, unitHeight);
+					if (tileData[x][y] == 1) {
+						this->bricks.push_back(GameObject(pos, size, ResourceManager::getTexture("pizza")));
+					} else if (tileData[x][y] == 2) {
+						this->bricks.push_back(GameObject(pos, size, ResourceManager::getTexture("rob")));
+					} else if (tileData[x][y] == 3) {
+						this->bricks.push_back(GameObject(pos, size, ResourceManager::getTexture("sigma")));
+					}
+				}
 			}
 		}
 	}

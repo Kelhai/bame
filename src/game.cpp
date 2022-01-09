@@ -4,7 +4,6 @@
 #include "../glfw/include/GLFW/glfw3.h"
 #include <string>
 #include <iostream>
-#include <filesystem>
 
 SpriteRenderer* renderer;
 
@@ -39,7 +38,7 @@ void Game::init() {
 	ResourceManager::loadTexture(file("sigma.png").c_str(), true, "sigma");
 	
 	GameLevel one = GameLevel();
-	one.load(file("src/one.lvl").c_str(), this->width, this->height);
+	one.load(file("src/one.lvl").c_str(), this->width, this->height, 1);
 
 	this->levels.push_back(one);
 	this->level = 0;

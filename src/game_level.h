@@ -13,7 +13,7 @@ class GameLevel {
 		std::vector<GameObject> bricks;
 		GameLevel() {}
 
-		void load(const char* file, unsigned int levelWidth, unsigned int levelHeight);
+		void load(const char* file, unsigned int levelWidth, unsigned int levelHeight, int number);
 
 		void draw(SpriteRenderer& renderer);
 
@@ -23,6 +23,7 @@ class GameLevel {
 		void init(std::vector<std::vector<unsigned int>> tileData, unsigned int levelWidth, unsigned int levelHeight);
 		float unitWidth;
 		float unitHeight;
+		int number;
 };
 	
 #endif
