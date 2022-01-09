@@ -18,7 +18,7 @@ Game::~Game() {
 
 inline std::string file(const char* fName) {
 	//K:/Programming/c/bpa/bpa/
-	std::string dir("K:/Programming/c/bpa/bpa/"); //C:/Users/honor/source/repos/Kelhai/bame/
+	std::string dir("C:/Users/honor/source/repos/Kelhai/bame/"); //C:/Users/honor/source/repos/Kelhai/bame/
 	return (dir + std::string(fName));
 }
 
@@ -36,6 +36,7 @@ void Game::init() {
 	ResourceManager::loadTexture(file("rob.png").c_str(), true, "rob");
 	ResourceManager::loadTexture(file("background.png").c_str(), true, "background");
 	ResourceManager::loadTexture(file("sigma.png").c_str(), true, "sigma");
+	ResourceManager::loadTexture(file("nixon.png").c_str(), true, "nixon");
 	
 	GameLevel one = GameLevel();
 	one.load(file("src/one.lvl").c_str(), this->width, this->height, 1);

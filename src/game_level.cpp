@@ -86,6 +86,8 @@ void GameLevel::init(std::vector<std::vector<unsigned int>> tileData, unsigned i
 						this->bricks.push_back(GameObject(pos, size, ResourceManager::getTexture("rob")));
 					} else if (tileData[x][y] == 3) {
 						this->bricks.push_back(GameObject(pos, size, ResourceManager::getTexture("sigma")));
+					} else if (tileData[x][y] == 4) {
+						this->bricks.push_back(GameObject(pos, size, ResourceManager::getTexture("nixon")));
 					}
 				}
 			}
