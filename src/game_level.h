@@ -9,21 +9,21 @@
 #include "resource_manager.h"
 
 class GameLevel {
-	public:
-		std::vector<GameObject> bricks;
-		GameLevel() {}
+public:
+    std::vector<GameObject> bricks;
+    GameLevel() {}
 
-		void load(const char* file, unsigned int levelWidth, unsigned int levelHeight, int number);
+    void load(const char* file, unsigned int levelWidth, unsigned int levelHeight, int number);
 
-		void draw(SpriteRenderer& renderer);
+    void draw(SpriteRenderer& renderer);
 
-		bool isCompleted();
+    bool isCompleted();
 
-	public:
-		void init(std::vector<std::vector<unsigned int>> tileData, unsigned int levelWidth, unsigned int levelHeight);
-		float unitWidth;
-		float unitHeight;
-		int number;
+public:
+    void init(std::vector<std::vector<unsigned int>> tileData, unsigned int levelWidth, unsigned int levelHeight);
+    float unitWidth;
+    float unitHeight;
+    int number;
 };
-	
+
 #endif
