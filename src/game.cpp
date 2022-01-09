@@ -18,7 +18,8 @@ Game::~Game() {
 }
 
 inline std::string file(const char* fName) {
-	std::string dir("yoyoyoyoy what's up guys welcome to another clash royale let's play"); //C:/Users/honor/source/repos/Kelhai/bame/
+	//K:/Programming/c/bpa/bpa/
+	std::string dir("K:/Programming/c/bpa/bpa/"); //C:/Users/honor/source/repos/Kelhai/bame/
 	return (dir + std::string(fName));
 }
 
