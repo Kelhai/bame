@@ -54,6 +54,9 @@ int main() {
 		float currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
+		if (false) {
+			continue;
+		}
 		glfwPollEvents();
 
 		game.processInput(deltaTime);

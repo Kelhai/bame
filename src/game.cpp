@@ -18,7 +18,7 @@ Game::~Game() {
 
 inline std::string file(const char* fName) {
 	// K:/Programming/c/bpa/bpa/
-	std::string dir("K:/Programming/c/bpa/bpa/"); // C:/Users/honor/source/repos/Kelhai/bame/
+	std::string dir("C:/Users/honor/source/repos/Kelhai/bame/"); // C:/Users/honor/source/repos/Kelhai/bame/
 	return (dir + std::string(fName));
 }
 
@@ -54,25 +54,25 @@ void Game::update(float dt) {
 void Game::processInput(float dt) {
 	if (keys[GLFW_KEY_UP]) {
 		if (characters.size() > 0) {
-			if (characters[0].y > 1 && characters[0].y < width)
+			if (characters[0].y > 1)
 				characters[0].y -= 1;
 		}
 	}
 	if (keys[GLFW_KEY_DOWN]) {
 		if (characters.size() > 0) {
-			if (characters[0].y > 1 && characters[0].y < width)
+			if (characters[0].y < 563)
 				characters[0].y += 1;
 		}
 	}
 	if (keys[GLFW_KEY_LEFT]) {
 		if (characters.size() > 0) {
-			if (characters[0].x > 1 && characters[0].x < height)
+			if (characters[0].x > 1)
 				characters[0].x -= 1;
 		}
 	}
 	if (keys[GLFW_KEY_RIGHT]) {
 		if (characters.size() > 0) {
-			if (characters[0].x > 1 && characters[0].x < height)
+			if (characters[0].x < 773)
 				characters[0].x += 1;
 		}
 	}
