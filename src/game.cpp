@@ -18,7 +18,7 @@ Game::~Game() {
 
 inline std::string file(const char* fName) {
 	// K:/Programming/c/bpa/bpa/
-	std::string dir("C:/Users/honor/source/repos/Kelhai/bame/"); // C:/Users/honor/source/repos/Kelhai/bame/
+	std::string dir("K:/Programming/c/bpa/bpa/"); // C:/Users/honor/source/repos/Kelhai/bame/
 	return (dir + std::string(fName));
 }
 
@@ -37,14 +37,22 @@ void Game::init() {
 	ResourceManager::loadTexture(file("background.png").c_str(), true, "background");
 	ResourceManager::loadTexture(file("sigma.png").c_str(), true, "sigma");
 	ResourceManager::loadTexture(file("nixon.png").c_str(), true, "nixon");
+	ResourceManager::loadTexture(file("boat_left.png").c_str(), true, "boat_left");
+	ResourceManager::loadTexture(file("boat_left_s.png").c_str(), true, "boat_left_s");
 	
-	GameLevel one = GameLevel();
-	one.load(file("src/one.lvl").c_str(), this->width, this->height, 1);
-
-	this->levels.push_back(one);
-	this->level = 0;
+	addLevel("src/one.lvl", 1);
+	addLevel("src/two.lvl", 2);
+	this->level = 1;
 
 	characters.push_back(Character(400, 300, ResourceManager::getTexture("sigma")));
+}
+
+void Game::addLevel(const char* path, int number) {
+	GameLevel level = GameLevel();
+	level.load(file(path).c_str(), this->width, this->height, number);
+	this->tileWidth = level.unitWidth;
+	this->tileHeight = level.unitHeight;
+	this->levels.push_back(level);
 }
 
 void Game::update(float dt) {
@@ -52,15 +60,21 @@ void Game::update(float dt) {
 }
 
 void Game::processInput(float dt) {
+	int x = characters[0].getTile(width, height, tileWidth, tileHeight).first;
+	int y = characters[0].getTile(width, height, tileWidth, tileHeight).second;
 	if (keys[GLFW_KEY_UP]) {
 		if (characters.size() > 0) {
-			if (characters[0].y > 1)
+			if (characters[0].y > 0) {
+				if ((width / this->levels[this->level].unitWidth)) {
+
+				}
 				characters[0].y -= 1;
+			}
 		}
 	}
 	if (keys[GLFW_KEY_DOWN]) {
 		if (characters.size() > 0) {
-			if (characters[0].y < 563)
+			if ((characters[0].y + tileHeight) < height)
 				characters[0].y += 1;
 		}
 	}
@@ -72,7 +86,7 @@ void Game::processInput(float dt) {
 	}
 	if (keys[GLFW_KEY_RIGHT]) {
 		if (characters.size() > 0) {
-			if (characters[0].x < 773)
+			if (characters[0].x < width - tileWidth)
 				characters[0].x += 1;
 		}
 	}

@@ -48,7 +48,8 @@ int main() {
 
 	float deltaTime = 0.0f;
 	float lastFrame = 0.0f;
-
+	glShadeModel(GL_FLAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	// render loop
 	while (!glfwWindowShouldClose(window)) {
 		float currentFrame = glfwGetTime();

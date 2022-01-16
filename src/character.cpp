@@ -14,3 +14,9 @@ void Character::draw(SpriteRenderer& renderer, float width, float height) {
 void Character::init() {
 
 }
+
+std::pair<int, int> Character::getTile(int screenWidth, int screenHeight, int tileWidth, int tileHeight) {
+	std::pair<int, int> tile;
+	//tile.first = width / this->x;
+	return tile;
+}

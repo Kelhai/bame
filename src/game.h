@@ -17,6 +17,7 @@ class Game {
 		std::vector<Character> characters;
 		bool keys[1024];
 		unsigned int width, height;
+		unsigned int tileWidth, tileHeight;
 
 		Game(unsigned int width, unsigned int height);
 		~Game();
@@ -26,6 +27,7 @@ class Game {
 		void processInput(float dt);
 		void update(float dt);
 		void render();
+		void addLevel(const char* path, int number);
 };
 
 #endif

@@ -442,6 +442,8 @@
     <None Include="src\one.lvl" />
     <None Include=".gitignore" />
     <None Include=".gitattributes" />
+    <None Include="src\one.hit" />
+    <None Include="src\two.lvl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glfw\include\GLFW\glfw3native.h">
@@ -1391,6 +1393,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="nixon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="boat_left.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="boat_left_s.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

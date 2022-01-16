@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -286,7 +286,9 @@
     <None Include="glm\gtx\vector_query.inl" />
     <None Include="glm\gtx\wrap.inl" />
     <None Include="src\fragment.fs" />
+    <None Include="src\one.hit" />
     <None Include="src\one.lvl" />
+    <None Include="src\two.lvl" />
     <None Include="src\vertex.vs" />
   </ItemGroup>
   <ItemGroup>
@@ -605,6 +607,8 @@
   <ItemGroup>
     <Image Include="awesomeface.png" />
     <Image Include="background.png" />
+    <Image Include="boat_left.png" />
+    <Image Include="boat_left_s.png" />
     <Image Include="nixon.png" />
     <Image Include="pizza.png" />
     <Image Include="rob.png" />

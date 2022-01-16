@@ -4,6 +4,7 @@
 #include "texture.h"
 #include "sprite_renderer.h"
 #include <string>
+#include <utility>
 
 class Character {
 	public:
@@ -17,6 +18,7 @@ class Character {
 	public:
 		void draw(SpriteRenderer& renderer, float width, float height);
 		void init();
+		std::pair<int, int> getTile(int screenWidth, int screenHeight, int tileWidth, int tileHeight);
 };
 
 #endif
